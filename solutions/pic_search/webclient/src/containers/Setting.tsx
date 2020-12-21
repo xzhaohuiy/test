@@ -271,12 +271,12 @@ const Setting = (props: any) => {
         <p>Image Search Demo</p>
       </div>
       <div className={classes.configHead}>
-        <h4 className={classes.config}>Config</h4>
-        <h4 className={classes.clear} onClick={clear}>
-          CLEAR ALL
+        <h4 className={classes.config}>设置</h4>
+        <h4 className={classes.clear} >
+        
         </h4>
       </div>
-      <SeperatLine title={`IMAGE SET`} style={{ marginBottom: "20px" }} />
+      <SeperatLine title={`可搜的图片`} style={{ marginBottom: "20px" }} />
       <div className={classes.imageSet}>
         <div className={classes.counts}>
           <p style={{ color: loading ? baseColor : "#fff" }}>{setText}</p>
@@ -307,7 +307,7 @@ const Setting = (props: any) => {
                 notchedOutline: classes.notchedOutline,
                 root: classes.formLabel,
               },
-              placeholder: "path/to/your/images",
+              placeholder: "",
             }}
           />
           <Fab
@@ -322,9 +322,9 @@ const Setting = (props: any) => {
             />
           </Fab>
         </div>
-        <SeperatLine title={`TOP K(1－100)`} style={{ marginBottom: "20px" }} />
+        <SeperatLine title={`搜索图片数量设置(1－100)`} style={{ marginBottom: "20px" }} />
         <div className={classes.counts}>
-          <p>{`show top ${topK} results`}</p>
+          <p>{`显示 ${topK} 张图片`}</p>
         </div>
         <Slider
           min={1}
@@ -339,7 +339,7 @@ const Setting = (props: any) => {
           }}
         />
       </div>
-      <SeperatLine title={`ORIGINAL IMAGE`} style={{ marginBottom: "50px" }} />
+      <SeperatLine title={`要找的图片`} style={{ marginBottom: "50px" }} />
       <div className={classes.upload}>
         {image ? (
           <div className={classes.benchImage}>
@@ -368,7 +368,7 @@ const Setting = (props: any) => {
           <DropzoneArea
             acceptedFiles={["image/*"]}
             filesLimit={1}
-            dropzoneText={`click to upload / drag a image here`}
+            dropzoneText={`点击上传要搜索查找的图片`}
             onDrop={uploadImg}
             dropzoneClass={classes.dropzoneContainer}
             showPreviewsInDropzone={false}
